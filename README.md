@@ -31,7 +31,7 @@ test:
     @echo i am test
 ```
 # 排序   
-## 插入
+## 插入  
 ---
 ### 直接
 ```
@@ -179,7 +179,7 @@ void BableSort(SqList &L6){
     }
 }
 ```
-### 快速 ![快速](file/快速.png)
+### 快速 ![](file/快速.png)
 ```c++
 void Qsort(SqList &L6,int low,int hight){
     if (low <hight) //not while
