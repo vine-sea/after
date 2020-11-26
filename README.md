@@ -1,4 +1,5 @@
 
+
 - [markdown](#markdown)
 - [magic tool !](#magic-tool-)
 - [makefile](#makefile)
@@ -18,6 +19,8 @@
   - [堆](#堆)
 - [归并 !](#归并-)
 - [基数](#基数)
+
+[go search](Serch.md)
 # markdown   
 
 | you     |her      |she      |
