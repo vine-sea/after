@@ -1,9 +1,9 @@
 - [*排序*](#排序)
-  - [x] [*插入*](#---插入)
-  - [x] [*交换*](#---交换)
-  - [x] [*选择*](#---选择)
-  - [x] [*归并*](#---归并)
-  - [ ] [*基数*](#---基数)
+  - [x] [*插入*](#-插入)
+  - [x] [*交换*](#-交换)
+  - [x] [*选择*](#-选择)
+  - [x] [*归并*](#归并-)
+  - [ ] [*基数*](#-基数)
   
 # markdown   
 | you     |her      |she      |
@@ -31,9 +31,9 @@ test:
     @echo i am test
 ```
 # 排序   
-- ## 插入
+## 插入
 ---
-- ### 直接
+### 直接
 ```
 void InertSort(SqList &L){
 for (int i = 2; i <= L.Length; ++i)
@@ -51,7 +51,7 @@ for (int i = 2; i <= L.Length; ++i)
     }      
 }
 ```
-- ### 二分
+### 二分
 ```
 void BInsertSort(SqList &L1){
 for (int i = 2; i <= L1.Length; i++)
@@ -72,7 +72,7 @@ for (int i = 2; i <= L1.Length; i++)
     }
 }
 ```
-- ### 二路归并
+### 二路归并
 ```
 void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
     L2.r[1]=L.r[1];
@@ -102,7 +102,7 @@ void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
     }
 }
 ```
-- ### 表 
+### 表 
 ```c++
 void TableInsertSort(SqList &SL){ 
     SL.r[1].next=0;
@@ -120,7 +120,7 @@ void TableInsertSort(SqList &SL){
     } 
 }
 ```
-- #### 表重排
+#### 表重排
 ```c++
 void RangeOfTableInsert(SqList &SL){
     int j,pre=SL.r[0].next;
@@ -140,7 +140,7 @@ void RangeOfTableInsert(SqList &SL){
     }
 }
 ```
-- ### 希尔
+### 希尔
 ```
 void ShellSort(SqList &L5 ,int dk[]){
     for (int i = 2; i >=0; i--)
@@ -160,9 +160,9 @@ void ShellSort(SqList &L5 ,int dk[]){
     }
 }
 ```
-- ## 交换
+## 交换
 ---
-- ### 冒泡
+### 冒泡
 ```c++
 void BableSort(SqList &L6){
     for (int i = L6.Length; i >=1; i--)
@@ -179,8 +179,7 @@ void BableSort(SqList &L6){
     }
 }
 ```
-- ### 快速    
-  ![快速](file/快速.png)
+### 快速 ![快速](file/快速.png)
 ```c++
 void Qsort(SqList &L6,int low,int hight){
     if (low <hight) //not while
@@ -203,9 +202,9 @@ int Partition(SqList &L6,int low,int hight){
     return low;
 }
 ```
-- ## 选择
+## 选择
 ---
-- ### 简单
+### 简单
 ```c++
 void SelectSort(SqList &L6){
     for (int i = 1; i < L6.Length; i++)
@@ -227,8 +226,8 @@ int FindMin(SqList &L6 ,int low,int hight){
     return min;
 }
 ```
-- ### 树形选择(冠军)
-- ### 堆
+### 树形选择(冠军)
+### 堆
 ```c++
 void HeapSort(SqList &L6){
     //init heap
@@ -262,8 +261,7 @@ void HeapAdjust(SqList &L6,int low ,int hight){
     L6.r[low]=buf;
 }
 ```
-- ## 归并
-    ![归并](file/二路.png)
+## 归并 ![](file/二路.png)
 ```c++
 void Msort(SqList SL,SqList &L6,int low,int hight){
     //sort if posible 
@@ -293,7 +291,7 @@ void Merge(SqList LS,SqList &L6,int low,int m,int hight){
 }
 ```
 ---
-- ## 基数
+## 基数
 ---
 
 
