@@ -19,9 +19,11 @@
 - [归并 !](#归并-)
 - [基数](#基数)
 # markdown   
+
 | you     |her      |she      |
 | :-: | :-: | :-: |  
-|   are   |    not  |   well   |   
+|   are   |    not  |   well   |  
+
 ```markdown
 # []() c++ []: ~ * - 
 
@@ -44,6 +46,7 @@ test:
     @echo i am test
 ```
 # 排序  
+
 # 插入  
 ## 直接
 ```
