@@ -1,11 +1,25 @@
-[*排序*](#排序)  
-* [x] [*插入*](#-插入)  
-* [x] [*交换*](#-交换)  
-* [x] [*选择*](#-选择)  
-* [x] [*归并*](#归并-)  
-* [ ] [*基数*](#-基数)  
-  
-# markdown   
+
+- [1. markdown](#1-markdown)
+- [2. magic tool !](#2-magic-tool-)
+- [3. makefile](#3-makefile)
+- [4. 排序](#4-排序)
+  - [## 4.1. 插入](#-41-插入)
+    - [4.1.1. 直接](#411-直接)
+    - [4.1.2. 二分](#412-二分)
+    - [4.1.3. 二路归并](#413-二路归并)
+    - [4.1.4. 表](#414-表)
+    - [4.1.5. 希尔](#415-希尔)
+  - [## 4.2. 交换](#-42-交换)
+    - [4.2.1. 冒泡](#421-冒泡)
+    - [4.2.2. 快速 !](#422-快速-)
+  - [## 4.3. 选择](#-43-选择)
+    - [4.3.1. 简单](#431-简单)
+    - [4.3.2. 树形选择(冠军)](#432-树形选择冠军)
+    - [4.3.3. 堆](#433-堆)
+  - [## 4.4. 归并 !](#-44-归并-)
+  - [## 4.5. 基数](#-45-基数)
+
+# 1. markdown   
 | you     |her      |she      |
 | :----: | :----: | :----: |  
 |   are   |    not  |   well   |   
@@ -19,21 +33,21 @@
 
 [![](file/齿轮.png)](#---交换)
 ```
-# magic tool [![](file/齿轮.png)](#---交换)
+# 2. magic tool ![](file/齿轮.png)
 ```
 gm convert 齿轮.png -resize 32X32 齿轮.png
 ```
-# makefile 
+# 3. makefile 
 ```makefile
 all:
     gcc *.cpp -o *.exe
 test:
     @echo i am test
 ```
-# 排序   
-## 插入  
+# 4. 排序   
+## 4.1. 插入  
 ---
-### 直接
+### 4.1.1. 直接
 ```
 void InertSort(SqList &L){
 for (int i = 2; i <= L.Length; ++i)
@@ -51,7 +65,7 @@ for (int i = 2; i <= L.Length; ++i)
     }      
 }
 ```
-### 二分
+### 4.1.2. 二分
 ```
 void BInsertSort(SqList &L1){
 for (int i = 2; i <= L1.Length; i++)
@@ -72,7 +86,7 @@ for (int i = 2; i <= L1.Length; i++)
     }
 }
 ```
-### 二路归并
+### 4.1.3. 二路归并
 ```
 void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
     L2.r[1]=L.r[1];
@@ -102,7 +116,7 @@ void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
     }
 }
 ```
-### 表 
+### 4.1.4. 表 
 ```c++
 void TableInsertSort(SqList &SL){ 
     SL.r[1].next=0;
@@ -119,9 +133,7 @@ void TableInsertSort(SqList &SL){
         SL.r[i].next=j;
     } 
 }
-```
-#### 表重排
-```c++
+//reset position
 void RangeOfTableInsert(SqList &SL){
     int j,pre=SL.r[0].next;
     RedType buf;
@@ -140,7 +152,7 @@ void RangeOfTableInsert(SqList &SL){
     }
 }
 ```
-### 希尔
+### 4.1.5. 希尔
 ```
 void ShellSort(SqList &L5 ,int dk[]){
     for (int i = 2; i >=0; i--)
@@ -160,9 +172,9 @@ void ShellSort(SqList &L5 ,int dk[]){
     }
 }
 ```
-## 交换
+## 4.2. 交换
 ---
-### 冒泡
+### 4.2.1. 冒泡
 ```c++
 void BableSort(SqList &L6){
     for (int i = L6.Length; i >=1; i--)
@@ -179,7 +191,7 @@ void BableSort(SqList &L6){
     }
 }
 ```
-### 快速 ![](file/快速.png)
+### 4.2.2. 快速 ![](file/快速.png)
 ```c++
 void Qsort(SqList &L6,int low,int hight){
     if (low <hight) //not while
@@ -202,9 +214,9 @@ int Partition(SqList &L6,int low,int hight){
     return low;
 }
 ```
-## 选择
+## 4.3. 选择
 ---
-### 简单
+### 4.3.1. 简单
 ```c++
 void SelectSort(SqList &L6){
     for (int i = 1; i < L6.Length; i++)
@@ -226,8 +238,8 @@ int FindMin(SqList &L6 ,int low,int hight){
     return min;
 }
 ```
-### 树形选择(冠军)
-### 堆
+### 4.3.2. 树形选择(冠军)
+### 4.3.3. 堆
 ```c++
 void HeapSort(SqList &L6){
     //init heap
@@ -261,7 +273,7 @@ void HeapAdjust(SqList &L6,int low ,int hight){
     L6.r[low]=buf;
 }
 ```
-## 归并 ![](file/二路.png)
+## 4.4. 归并 ![](file/二路.png)
 ---
 ```c++
 void Msort(SqList SL,SqList &L6,int low,int hight){
@@ -291,7 +303,7 @@ void Merge(SqList LS,SqList &L6,int low,int m,int hight){
 
 }
 ```
-## 基数
+## 4.5. 基数
 ---
 
 
