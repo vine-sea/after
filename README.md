@@ -1,9 +1,9 @@
-- [*排序*](#排序)
-  - [x] [*插入*](#-插入)
-  - [x] [*交换*](#-交换)
-  - [x] [*选择*](#-选择)
-  - [x] [*归并*](#归并-)
-  - [ ] [*基数*](#-基数)
+[*排序*](#排序)  
+* [x] [*插入*](#-插入)  
+* [x] [*交换*](#-交换)  
+* [x] [*选择*](#-选择)  
+* [x] [*归并*](#归并-)  
+* [ ] [*基数*](#-基数)  
   
 # markdown   
 | you     |her      |she      |
@@ -262,6 +262,7 @@ void HeapAdjust(SqList &L6,int low ,int hight){
 }
 ```
 ## 归并 ![](file/二路.png)
+---
 ```c++
 void Msort(SqList SL,SqList &L6,int low,int hight){
     //sort if posible 
@@ -290,7 +291,6 @@ void Merge(SqList LS,SqList &L6,int low,int m,int hight){
 
 }
 ```
----
 ## 基数
 ---
 
