@@ -19,7 +19,9 @@
 + [归并 !](#归并-)
 + [基数](#基数)
 
-[go search](Serch.md)
+[go search](Serch.md)  
+
+$\sum$
 # `otherInfo`
 ```
 printf wrong use gbk
