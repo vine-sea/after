@@ -7,10 +7,10 @@ int main(int argc, char const *argv[])
     initR(L6,Len);
     buf=L6;
 
-    // while (Len--)
-    // printf("%-6d",ser++);
-    // printf("\n");
-    char str[][20]={"直接插入排序","二分插入排序","二路插入排序","表插入排序","希尔排序","冒泡排序","快速排序","简单选择排序","堆排序","归并排序"};
+    while (Len--)
+    printf("%-6d",ser++);
+    printf("\n");
+    char str[10][20]= {};//name here
     printf("%20s     ",0);
     scanf(buf);
    

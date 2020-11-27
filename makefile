@@ -1,4 +1,4 @@
-sour=insert
+sour=search
 cpp=${sour}.cpp
 exe=${sour}.exe
 

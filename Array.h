@@ -5,7 +5,11 @@
 #define MAXSIZE 20
 typedef int KeyType;
 #define LT(a,b) ((a)<(b))
+#define EQ(a,b) ((a)==(b))
 #define LQ(a,b) ((a)<=(b))
+#define SWAP(a,b,buf) ((buf)=(a),(a)=(b),(b)=(buf))
+
+ 
 
 typedef struct {
     KeyType key;
@@ -22,6 +26,10 @@ typedef struct{
     int Length;
 }SqList,SlinkList;
 
+typedef struct{
+    RedType *elem;
+    int Length;
+}SSTable;
 
 void scanf(SqList L){
     for (int i = 1; i <= L.Length; i++)
@@ -31,6 +39,13 @@ void scanf(SqList L){
     printf("\n");
 }
 
+void scanf(SSTable L){
+    for (int i = 1; i <= L.Length; i++)
+    {
+        printf("%-6d",L.elem[i].key);
+    }
+    printf("\n");
+}
 
 void scanf(SqList L2,int fir,int fin ){
     for (int i = fir; i <= MAXSIZE&&fir>1; i++) //i!=1
@@ -45,8 +60,6 @@ void scanf(SqList L2,int fir,int fin ){
     printf("\n");
 }
 
-
-
 void initR(SqList &L,int Length){
     L.Length=0;
     srand((int)time(0));
@@ -56,11 +69,21 @@ void initR(SqList &L,int Length){
    }
 }
 
+void initR(SSTable &L,int Length){
+    L.Length=Length;
+    L.elem=(RedType*)malloc(sizeof(RedType)*(L.Length+1));
 
+
+    L.Length=0;
+    srand((int)time(0));
+    for (int i = 0; i < Length; i++)
+   {
+      L.elem[++L.Length].key=rand()%40+30;
+   }
+}
 
 void InertSort(SqList &L){
-
-      for (int i = 2; i <= L.Length; ++i)
+    for (int i = 2; i <= L.Length; ++i)
     {
         if (LT(L.r[i].key,L.r[i-1].key)) {
             L.r[0]=L.r[i];
@@ -72,9 +95,23 @@ void InertSort(SqList &L){
             }
             L.r[j+1]=L.r[0];
         }
+    }
       
-  
+}
 
+void InertSort(SSTable &L){
+    for (int i = 2; i <= L.Length; ++i)
+    {
+        if (LT(L.elem[i].key,L.elem[i-1].key)) {
+            L.elem[0]=L.elem[i];
+            L.elem[i]=L.elem[i-1];
+
+            int j;
+            for( j=i-1;LT(L.elem[0].key,L.elem[j].key);--j){
+                L.elem[j]=L.elem[j-1];
+            }
+            L.elem[j+1]=L.elem[0];
+        }
     }
       
 }
@@ -155,7 +192,6 @@ void TableInsertSort(SqList &SL){
     } 
 }
 
-
 void RangeOfTableInsert(SqList &SL){
      int j,pre=SL.r[0].next;
      
@@ -178,8 +214,6 @@ void RangeOfTableInsert(SqList &SL){
     }
 }
 
-
-
 void scanOfTableInsert(SqList &SL){
 
     int 
@@ -193,7 +227,6 @@ void scanOfTableInsert(SqList &SL){
     
   printf("\n");
 }
-
 
 void ShellSort(SqList &L5 ,int dk[],int len){
 
@@ -223,7 +256,6 @@ void ShellSort(SqList &L5 ,int dk[],int len){
 
 }
 
-
 void BableSort(SqList &L6){
 
      for (int i = L6.Length; i >=1; i--)
@@ -240,8 +272,6 @@ void BableSort(SqList &L6){
     }
 }
 
-
-
 int Partition(SqList &L6,int low,int hight){
 //   RedType buf;
     L6.r[0]=L6.r[low];
@@ -256,7 +286,6 @@ int Partition(SqList &L6,int low,int hight){
     return low;
 }
 
-
 void Qsort(SqList &L6,int low,int hight){
     if (low <hight) //not while
     {
@@ -265,7 +294,6 @@ void Qsort(SqList &L6,int low,int hight){
         Qsort(L6,p+1,hight);
     }
 }
-
 
 int FindMin(SqList &L6 ,int low,int hight){
     int min =low;
@@ -288,7 +316,6 @@ void SelectSort(SqList &L6){
     }
 }
 
-
 void HeapAdjust(SqList &L6,int low ,int hight){
     // just low
     RedType buf=L6.r[low];
@@ -304,8 +331,6 @@ void HeapAdjust(SqList &L6,int low ,int hight){
     // low is riht now
     L6.r[low]=buf;
 }
-
-
 
 void HeapSort(SqList &L6){
         //init heap
@@ -327,13 +352,6 @@ void HeapSort(SqList &L6){
     }
 }
 
-
-
-
-
-
-
-
 void Merge(SqList LS,SqList &L6,int low,int m,int hight){
     //your LS is sorted in two part,sliced by m
     // small 112 LS→L6
@@ -347,8 +365,6 @@ void Merge(SqList LS,SqList &L6,int low,int m,int hight){
     while(fh<=hight) L6.r[sl++]=LS.r[fh++];
 
 }
-
-
 
 void Msort(SqList SL,SqList &L6,int low,int hight){
     //sort if posible 
@@ -364,10 +380,28 @@ void Msort(SqList SL,SqList &L6,int low,int hight){
     }
 }
 
+int Search_Seq(SSTable ST,int low){
 
+    int buf=low,b=ST.Length+1;
+    ST.elem[0].key=buf;
 
+    while(!EQ(ST.elem[--b].key,ST.elem[0].key));//here end the while
 
+     return b;
 
+}
 
+int Search_Bin(SSTable ST,int buf){
 
+    int low=1,hight=ST.Length,m;
 
+    ST.elem[0].key=buf;
+    while (low<=hight)
+    {
+        m=(low+hight)/2;  //112
+        if(EQ(ST.elem[m].key,ST.elem[0].key)) return m;
+        else if(LT(ST.elem[m].key,ST.elem[0].key))low=m+1;
+        else hight=m-1;
+    }
+    return 0;
+}
