@@ -56,7 +56,7 @@ test:
 # `排序`
 # 插入  
 ## 直接
-```
+```c++
 void InertSort(SqList &L){
 for (int i = 2; i <= L.Length; ++i)
     {
@@ -74,7 +74,7 @@ for (int i = 2; i <= L.Length; ++i)
 }
 ```
 ## 二分
-```
+```c++
 void BInsertSort(SqList &L1){
 for (int i = 2; i <= L1.Length; i++)
     {
@@ -95,8 +95,8 @@ for (int i = 2; i <= L1.Length; i++)
 }
 ```
 ## 二路归并
-```
-void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
+```c++
+void WInsert(SqList L, SqList &L2,int &fir,int &fin){
     L2.r[1]=L.r[1];
     // int fir ,fin;
     fir=fin=1;
@@ -163,7 +163,7 @@ void RangeOfTableInsert(SqList &SL){
 }
 ```
 ## 希尔
-```
+```c++
 void ShellSort(SqList &L5 ,int dk[]){
     for (int i = 2; i >=0; i--)
     {
