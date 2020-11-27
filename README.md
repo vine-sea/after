@@ -21,7 +21,6 @@
 
 [go search](Serch.md)  
 
-$\sum$
 # `otherInfo`
 ```
 printf wrong use gbk

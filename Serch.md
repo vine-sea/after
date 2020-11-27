@@ -22,8 +22,8 @@ $\begin{aligned}
 \end{aligned}$   
 
 $\begin{aligned}
-  ASL_{ss}^{'}&=\sum_{i=1}^{n}{p_ic_i}+*\\
-  &=\frac{1}{2n}\sum_{i=1}^{n}{c_i}+*\\
+  ASL_{ss}^{'}&=\sum_{i=1}^{n}{p_ic_i}+\\
+  &=\frac{1}{2n}\sum_{i=1}^{n}{c_i}+\\
   &=\frac{1}{2n}*\frac{n(n+1)}{2}+\frac{n+1}{2}\\
   &=\frac{3}{4}(n+1)
 \end{aligned}$
