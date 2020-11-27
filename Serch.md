@@ -10,23 +10,24 @@
   + [B+树（查找根，链）](#b树查找根链)
 + [`哈希表`](#哈希表)
 
+
 [back](README.md)
 # `静态查找`
 ## 顺序表(改进概率，频率)
  
-$\begin{aligned} 
+$$\begin{aligned} 
   ASL_{ss}&=\sum_{i=1}^{n}{p_ic_i} \\
   &=\frac{1}{n}\sum_{i=1}^{n}{c_i} \\
   &=\frac{1}{n}*\frac{n(n+1)}{2}\\  
   &=\frac{n+1}{2}
-\end{aligned}$   
+\end{aligned}$$   
 
-$\begin{aligned}
+$$\begin{aligned}
   ASL_{ss}^{'}&=\sum_{i=1}^{n}{p_ic_i}+\\
   &=\frac{1}{2n}\sum_{i=1}^{n}{c_i}+\\
   &=\frac{1}{2n}*\frac{n(n+1)}{2}+\frac{n+1}{2}\\
   &=\frac{3}{4}(n+1)
-\end{aligned}$
+\end{aligned}$$
 
 <!-- $ASL_{ss}=\frac{1}{n}\sum_{i=1}^{n}(n-i+1)$  
 $ASL^{ss}=\frac{n+1}{2}$ -->
@@ -46,13 +47,13 @@ int Search_Seq(SSTable ST,int low){
 n节点树→$h=\lfloor log_2n\rfloor+1$层  
 若满二叉树→
 
-$\begin{aligned}
+$$\begin{aligned}
   ASL_{bs}&=\sum_{i=1}^{n}{p_ic_i}\\
   &=\frac{1}{n}\sum_{i=1}^{n}{c_i}\\
   &=\frac{1}{n}\sum_{j=1}^{h}{j.2^{j-1}}\\
   &=\frac{n+1}{n}log_2(n+1)-1\\ 
   &=log_2(n+1)-1 (n>50)
-\end{aligned}$
+\end{aligned}$$
 
 ```c++
 int Search_Bin(SSTable ST,int buf){
@@ -72,30 +73,30 @@ int Search_Bin(SSTable ST,int buf){
 ```
 ## 静态树表(最优折半，非等概率)
 带权内路径长度和  
-$PH=\sum_{i=1}^nw_ih_i$
+$$PH=\sum_{i=1}^nw_ih_i$$
 ## 索引顺序表
 每块s个 共$b=\lfloor n/s\rfloor$块  
 
-$\begin{aligned}
+$$\begin{aligned}
   ASL_{bs} &=L_b+L_w \\
 &=\frac{1}{b}\sum_{i=1}^bi+\frac{1}{s}\sum_{j=1}^sj\\
 &=\frac{b+1}{2}+\frac{s+1}{2}\\
 &=\frac{1}{2}(\frac{n}{s}+1)+\frac{s}{2}
-\end{aligned}$
+\end{aligned}$$
 
-$ASL_{bs}^{'}≈log_2(\frac{n}{s}+1)+\frac{s}{2}$
+$$ASL_{bs}^{'}≈log_2(\frac{n}{s}+1)+\frac{s}{2}$$
 
 # `动态查找`
 ## 二叉排序树
 ## 平衡二叉树（删，插）
 h层  至少  
-$N_h=N_{h-1}+N_{h-2}+1$  
-$F_h=\frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^h$  
+$$N_h=N_{h-1}+N_{h-2}+1$$  
+$$F_h=\frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^h$$  
    
-$\begin{aligned}
+$$\begin{aligned}
   N_h&=F_{h+2}-1(n>0)\\
   &≈\frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^{h+2}-1\\
-\end{aligned}$  
+\end{aligned}$$  
 ## B-树（删，插）
 + 多m/节点
 + 少$\lceil m/2\rceil$/节点（根2）
