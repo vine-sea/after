@@ -20,7 +20,7 @@
 + [基数](#基数)
 
 [go search](Serch.md)  
-
+[go tree](tree.md)
 # `otherInfo`
 ```
 printf wrong use gbk
@@ -32,6 +32,7 @@ printf wrong use gbk
 |   are   |    not  |   well   |  
 
 ```markdown
+
 # []() c++ []: ~ * - 
 
 1. yuo
@@ -42,6 +43,17 @@ printf wrong use gbk
 [![](file/齿轮.png)](##交换)
 
 ctr shift p
+```
+```mermaid
+graph TD
+a--> b
+```
+```flow
+st=>start: start
+co=>condition: is you
+e=>end: end
+st(right)->co
+co(yes)->e
 ```
 # `magic tool` ![](file/齿轮.png)
 ```

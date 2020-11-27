@@ -122,3 +122,7 @@ k→f(K)
 - $HashTable[m]$ $OverTable[v]$(溢出)
 
 $α=\frac{填入记录}{表长}$
+
+
+
+
