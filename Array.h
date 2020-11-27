@@ -31,8 +31,9 @@ void scanf(SqList L){
     printf("\n");
 }
 
+
 void scanf(SqList L2,int fir,int fin ){
-        for (int i = fir; i <= MAXSIZE; i++)
+    for (int i = fir; i <= MAXSIZE&&fir>1; i++) //i!=1
     {
         printf("%-6d",L2.r[i]);
     }
@@ -43,6 +44,7 @@ void scanf(SqList L2,int fir,int fin ){
     }
     printf("\n");
 }
+
 
 
 void initR(SqList &L,int Length){
@@ -100,7 +102,7 @@ void BInsertSort(SqList &L1){
  
 }
 
-void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
+void WInsert(SqList L, SqList &L2,int &fir,int &fin){
    L2.r[1]=L.r[1];
     // int fir ,fin;
     fir=fin=1;
@@ -134,6 +136,8 @@ void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
 
 void TableInsertSort(SqList &SL){
    
+    SL.r[0].key=0x7fffffff;
+    SL.r[0].next=1;
     SL.r[1].next=0;
     int j,pre;
 
@@ -191,8 +195,9 @@ void scanOfTableInsert(SqList &SL){
 }
 
 
-void ShellSort(SqList &L5 ,int dk[]){
-    for (int i = 2; i >=0; i--)
+void ShellSort(SqList &L5 ,int dk[],int len){
+
+    for (int i = len-1; i >=0; i--)
     {
         
         for (int j =dk[i]+1 ; j <=L5.Length; j++)

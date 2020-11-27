@@ -1,3 +1,4 @@
++ [`otherInfo`](#otherinfo)
 + [`markdown`](#markdown)
 + [`magic tool` !](#magic-tool-)
 + [`makefile`](#makefile)
@@ -19,6 +20,10 @@
 + [基数](#基数)
 
 [go search](Serch.md)
+# `otherInfo`
+```
+printf wrong use gbk
+```
 # `markdown`   
 
 | you     |her      |she      |
@@ -122,6 +127,8 @@ void WInsert(SqList &L, SqList &L2,int &fir,int &fin){
 ## 表 
 ```c++
 void TableInsertSort(SqList &SL){ 
+    SL.r[0].key=0x7fffffff;
+    SL.r[0].next=1;
     SL.r[1].next=0;
     int j,pre;
     for (int i = 2; i <=SL.Length; i++)
