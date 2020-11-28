@@ -1,5 +1,6 @@
 + [`otherInfo`](#otherinfo)
 + [`markdown`](#markdown)
++ [`Latex`](#latex)
 + [`magic tool` !](#magic-tool-)
 + [`makefile`](#makefile)
 + [`排序`](#排序)
@@ -30,7 +31,7 @@
 
 
 
-
+[here](formula/my.pdf)
 # `otherInfo`
 ```
 printf wrong use gbk
