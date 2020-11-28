@@ -20,22 +20,12 @@ PARENT&=\lfloor i/2\rfloor,LCHILD=2i
 ## 转化（兄弟）
 ## 遍历
 右边兄弟
-$$
-\left\{
-    \begin{array}{l}
-        树的先根序→森林的先序→二叉树的先序\\
-        树的后根序→森林的中序→二叉树的中序
-    \end{array}
-\right.
-$$
 
 $$
-\left\{ 
 \begin{aligned}
-    you\\
-    me\\
-    her
-\end{aligned}\right.
+    树的先根序→森林的先序→二叉树的先序\\
+    树的后根序→森林的中序→二叉树的中序
+\end{aligned}
 $$
 
 # 赫夫曼
