@@ -26,17 +26,22 @@ $$
 ## BFS
 # 最小树(P.K→MST)
 ## 强连通分量
-## Prim
+## 重连通图
+## Prim $\hspace{.1cm}o(n^2)$
 $$
 U={\{u_0\}},TE={\{\}}\\
-\{\begin{aligned}
-    you\\
-    her\\
-\end{aligned}
 $$
-## Kruskal
-# 拓扑
-# 最短
+## Kruskal $\hspace{.1cm}o(e\log e)$
+$$
+T=(V,\{\})
+$$
+# 拓扑（AOV）
+## 有向无环
+## 关键路径(AOE)
+# 最短(D.F,cost)
+## Dij $\hspace{.1cm}o(n^3)$
+
+## Fro $\hspace{.1cm}o(n^3)$
 
 
 
