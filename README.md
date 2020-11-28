@@ -18,43 +18,18 @@
   + [堆](#堆)
 + [归并 !](#归并-)
 + [基数](#基数)
++ [`查找`](#查找)
++ [`树`](#树)
++ [`图`](#图)
++ [`链`](#链)
++ [`表`](#表-1)
++ [`栈`](#栈)
 
-[go search](Serch.md)  
-[go tree](tree.md)
 # `otherInfo`
 ```
 printf wrong use gbk
 ```
 # `markdown`   
-
-| you     |her      |she      |
-| :-: | :-: | :-: |  
-|   are   |    not  |   well   |  
-
-```markdown
-
-# []() c++ []: ~ * - 
-
-1. yuo
-   1. her 
-
-- [X] [插入](##插入)
-
-[![](file/齿轮.png)](##交换)
-
-ctr shift p
-```
-```mermaid
-graph TD
-a--> b
-```
-```flow
-st=>start: start
-co=>condition: is you
-e=>end: end
-st(right)->co
-co(yes)->e
-```
 # `magic tool` ![](file/齿轮.png)
 ```
 gm convert 齿轮.png -resize 32X32 齿轮.png
@@ -327,7 +302,12 @@ void Merge(SqList LS,SqList &L6,int low,int m,int hight){
 }
 ```
 # 基数
-
+# `查找`
+# `树`
+# `图`
+# `链`
+# `表`
+# `栈`
 
 
 
