@@ -28,18 +28,15 @@ $$
     \end{array}
 \right.
 $$
-```flow
-st=>start: start
-op=>operation: first
-op2=>operation: left
-co=>condition: no one?
-e=>end: end
-st(right)->op->co
-co(no)->op2(right)->op
-co(yes)->e
-```
 
-
+$$
+\left\{ 
+\begin{aligned}
+    you\\
+    me\\
+    her
+\end{aligned}\right.
+$$
 
 # 赫夫曼
 $$
