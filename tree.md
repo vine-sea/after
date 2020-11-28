@@ -1,6 +1,8 @@
 [back](README.md)
 
-
+```latex
+\frac{1}{2}
+```
 # 二叉树
 # 结构
 顺序
