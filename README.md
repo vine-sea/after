@@ -41,7 +41,8 @@ printf wrong use gbk
 ```
 Miktex
 per.exe
-
+tikz
+cartexart
 ```
 # `magic tool` ![](file/齿轮.png)
 ```

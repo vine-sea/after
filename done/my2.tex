@@ -1,0 +1,42 @@
+\documentclass[12pt,UTF8]{ctexart}
+
+\usepackage{tikz}
+\begin{document}
+
+\title{vine-sea}
+\author{vine}
+\maketitle
+% \begin{abstract}
+%     here is abstract
+% \end{abstract}
+
+\section{sectionone}
+% \subsection{subsection}
+% \subsubsection{subsubsection}
+\tiny you\\  
+\scriptsize you\\
+\footnotesize you\\
+\small you\\
+\normalsize you\\
+\large you\\
+\Large you\\
+\LARGE you\\
+\huge you\\
+\Huge you
+
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[step=.5cm,gray,very thin] (-4,-4) grid (4,4);
+        \foreach \x in {1,11,...,360}
+         \draw[fill=green] (0,0) -- (\x:\x*0.01) -- (\x+10:\x*0.01)circle (.01) ;
+
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    $m=\sum_{i=1}^nx_i$\\
+    $k=\prod_{i=1}^nx_i$
+\end{center}
+
+\end{document}
