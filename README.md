@@ -43,6 +43,262 @@ Miktex
 per.exe
 tikz
 cartexart
+newcomand
+54 before 43 after 10 used
+unzip at 14:04（not do）
+load iso→1408 1544（done）
+$()!<dis>!:<ang>()$
+\xint
+\pgfmath
+xfp
+lua
+```
+code here section one
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usetikzlibrary {angles,quotes} 
+
+
+\begin{document}
+\tikzset{grid/.style={step=.5cm,help lines,color=#1!50},
+grid/.default=blue,
+axes/.style=,
+important line/.style={very thick},
+information text/.style={rounded corners,fill=red!10,inner sep=1ex}}
+
+\colorlet{anglecolor}{green!50!black} 
+\colorlet{sincolor}{red} 
+\colorlet{tancolor}{orange!80!black}
+\colorlet{coscolor}{blue}
+
+\begin{center}
+    \section{one}
+    %t1 shoud package
+    \tikz \draw[thick,rounded corners=8pt] 
+    (0,0) -- (0,2) -- (1,3.25) -- (2,2) -- (2,0) -- (0,2) -- (2,2) -- (0,0) -- (2,0);
+
+    \section{two}
+    %t2
+    We are working on
+    \begin{tikzpicture} [scale=3,>=Stealth]%arrow.meta need
+    %剪切部分
+    % \clip (-0.1,-0.2) rectangle (1.1,0.75);   
+    % \clip[draw] (0.5,0.5) circle (.6cm);
+    \draw[grid=gray] (-1.4,-1.4) grid (1.4,1.4);
+    \draw[->] (-1.5,0) -- (1.5,0); 
+    \draw[->](0,-1.5) -- (0,1.5);
+    \draw (0,0) circle [radius=1cm]; 
+    \draw (3mm,0mm) arc 
+    [start angle=0, end angle=30, radius=3mm];
+
+    % \fill[green!20!white] (0,0) -- (3mm,0mm) 
+    % arc [start angle=0, end angle=30, radius=3mm] --(0,0);
+    
+    % \filldraw[fill=green!20!white, draw=green!50!black]
+    %  (0,0) -- (3mm,0mm) arc [start angle=0, end angle=30, radius=3mm] -- cycle;
+
+    \shadedraw[left color=gray,right color=green, draw=green!50!black] (0,0) -- (3mm,0mm)
+    arc [start angle=0, end angle=30, radius=3mm] -- cycle;
+   
+    % \draw[red,very thick] (30:1cm) -- +(0,-0.5);
+    \draw[blue,very thick] (30:1cm) ++(0,-0.5) --
+    node[above=1pt,fill=white]{$\cos \alpha$} (0,0);%++&+
+
+    \draw[red,very thick] (30:1cm) --
+    node[left=1pt,fill=white]{$\sin \alpha$} (30:1cm |- 0,0);%here it is
+    
+    \path [name path=upward line] (1,0) -- (1,1);
+    \path [name path=sloped line] (0,0) -- (30:1.5cm);
+    % a bit longer, so that there is an intersection
+    % (add `\usetikzlibrary{intersections}' after loading tikz in the preamble) 
+    \draw [name intersections={of=upward line and sloped line, by=x}]
+    [very thick,orange] (1,0) --
+    node[right=1pt,fill=white]
+    % {$\tan \alpha$} 
+    % displaystyle color
+    {$\displaystyle \tan \alpha \color{black}= 
+    \frac{{\color{red}\sin \alpha}}{\color{blue}\cos \alpha}$}
+    (x); 
+    
+    \draw (0,0) -- (x);
+
+    % \foreach \x in {-1,-0.5,1}
+    \foreach \x/\xtext in {-1, -0.5/-\frac{1}{2}, 1}
+    % \draw (\x,-1pt) -- (\x,1pt);
+    \draw[xshift=\x cm] (0pt,-1pt) -- (0pt,1pt) node[anchor=north] {$\xtext$};
+
+    % \foreach \y in {-1,-0.5,0.5,1}
+    \foreach \y/\ytext in {-1, -0.5/-\frac{1}{2}, 0.5/\frac{1}{2}, 1}
+    % \draw (-1pt,\y cm) -- (1pt,\y cm) node[anchor=east] {$\ytext$};
+    \draw (-1pt,\y cm) -- (1pt,\y cm) node[fill=yellow,left=5pt] {$\ytext$};
+
+
+
+
+\draw[xshift=1.2cm,yshift=-1cm] 
+%at the midle
+node[right,text width=3cm,information text] {
+The {\color{anglecolor} angle $\alpha$} is $30^\circ$ in the example ($\pi/6$ in radians). 
+The {\color{sincolor}sine of $\alpha$}, which is the height of the red line, is
+\[ {\color{sincolor} \sin \alpha} = 1/2. \] By the Theorem of Pythagoras ...
+};
+
+
+\end{tikzpicture}
+
+    %t2.3
+    % \tikz 
+    \begin{tikzpicture}
+        \draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+        \draw  (-1.5,0) -- (1.5,0) -- (0,-1.5) -- (0,1.5);
+        \draw (0,0) circle [radius=1cm];  
+    \end{tikzpicture}
+   
+    %2.4
+    \tikz \draw[rotate=30,scale=3] 
+    (0,0) ellipse [x radius=6pt, y radius=3pt];
+
+    \tikz \draw[rotate=30,scale=3] 
+    (0,0) rectangle (2*6pt,2*3pt);
+
+    \begin{tikzpicture} 
+        % [grid/.style ={help lines,color=#1!50}, 
+        % grid/.default=blue]
+    \draw[grid=gray] (-1.4,-1.4) grid (1.4,1.4);
+    \filldraw [gray] 
+        (0,0) circle [radius=2pt] 
+        (1,1) circle [radius=2pt] 
+        (2,1) circle [radius=2pt]
+        (2,0) circle [radius=2pt];
+    \draw (0,0) .. controls (1,1) and (2,1) .. (2,0);
+    \end{tikzpicture}
+
+    %2.10
+    \tikz \draw[scale=.5] (0,0) arc 
+    [start angle=0, end angle=315,
+    x radius=1.75cm, y radius=1cm];
+
+    %2.12
+    \tikz \draw
+    [grid] (0,0) rectangle (1,1) (0,0) parabola (1,1);
+
+    \tikz \draw[x=1pt,y=1pt] 
+    (0,0) parabola  (4,16) (6,12);
+
+    
+    \begin{tikzpicture}[scale=1]
+        \filldraw [gray]
+        (0,0) circle [radius=2pt] 
+        (4pt,16pt) circle [radius=2pt] 
+        (6pt,12pt) circle [radius=2pt]  ;
+        \draw[x=1pt,y=1pt] 
+        (0,0) parabola bend (4,16) (6,12);
+    \end{tikzpicture} 
+
+    A sine \tikz \draw[x=1ex,y=1ex] 
+    (0,0) sin (1.57,1) cos (3.14,0); curve
+
+    \tikz \draw[x=1.57ex,y=1ex,scale=2] %π/2≈1.57
+    (0,0) sin (1,1) cos (2,0) sin (3,-1) cos (4,0) 
+    (0,1) cos (1,0) sin (2,-1) cos (3,0) sin (4,1);
+
+
+    %2.14
+    \tikz \shade 
+    (0,0) rectangle (2,1) (3,0.5) circle (.5cm);
+
+    \begin{tikzpicture}
+        % [rounded corners,ultra thick] 
+        \shade[top color=yellow,bottom color=black] 
+        (0,0) rectangle +(2,1);
+        \shade[left color=yellow,right color=black]
+        (3,0) rectangle +(2,1);
+        \shadedraw[inner color=yellow,outer color=black,draw=yellow] 
+        (6,0) rectangle +(2,1);
+        \shade[ball color=green] (9,.5) circle (.5cm);
+    \end{tikzpicture}
+
+    %2.15
+    \begin{tikzpicture} \def\rectanglepath{-- ++(1cm,0cm) -- ++(0cm,1cm) -- ++(-1cm,0cm) -- cycle} \draw (0,0) \rectanglepath; \draw (1.5,0) \rectanglepath;
+    \end{tikzpicture}
+
+    \begin{tikzpicture} \def\rectanglepath{-- +(1cm,0cm) -- +(1cm,1cm) -- +(0cm,1cm) -- cycle} \draw (0,0) \rectanglepath; \draw (1.5,0) \rectanglepath;
+    \end{tikzpicture}
+
+
+    \tikz \draw (0,0) rectangle +(1,1) (1.5,0) rectangle +(1,1);
+
+
+    %2.18
+    \begin{tikzpicture}[ultra thick]
+        \draw (0,0) -- (0,1);
+        \begin{scope}[thin] 
+        \draw (1,0) -- (1,1); 
+        \draw (2,0) -- (2,1);
+        \end{scope}
+        \draw (3,0) -- (3,1);
+    \end{tikzpicture}
+
+    %2.19
+
+    \tikz \draw (0,0) -- (0,0.5) [xshift=2pt] (0,0) -- (0,0.5);
+
+    \begin{tikzpicture}[even odd rule,rounded corners=2pt,x=10pt,y=10pt] 
+        \filldraw
+        [fill=yellow!80!black] (0,0) rectangle (1,1) 
+        [xshift=5pt,yshift=5pt] (0,0) rectangle (1,1)
+        [rotate=30] (-1,-1) rectangle (2,2)
+         ;
+    \end{tikzpicture}
+
+
+    %2.20
+    \begin{tikzpicture}
+    \foreach \x in {1,2,...,5,7,8,...,12}
+    \foreach \y in {1,...,5} {
+        \draw (\x,\y) +(-.5,-.5) rectangle +(.5,.5);
+        \draw (\x,\y) node{\x,\y};
+    }
+    \end{tikzpicture}
+
+    %2.20
+    \begin{tikzpicture} 
+        \draw (0,0) .. controls (6,1) and (9,1) .. 
+        node[near start,sloped,above] {near start}
+        node {midway} 
+        node[very near end,sloped,below] {very near end} 
+        (12,0);
+    \end{tikzpicture}
+
+    %2.22
+
+    \begin{tikzpicture}[scale=3] 
+    \coordinate (A) at (1,0); 
+    \coordinate (B) at (0,0); 
+    \coordinate (C) at (30:1cm);
+    \draw (A) -- (B) -- (C) 
+    pic %section18
+    [draw=green!50!black, fill=green!20, angle radius=9mm, "$\alpha$"]
+    {angle = A--B--C}
+    ;
+    \end{tikzpicture}
+
+
+
+
+
+
+\end{center}
+\end{document}
+
+% \begin{document}
+% \begin{tikzpicture}
+ 
+% \end{tikzpicture}
+% \end{document}
+
 ```
 # `magic tool` ![](file/齿轮.png)
 ```
