@@ -137,7 +137,7 @@ information text/.style={rounded corners,fill=red!10,inner sep=1ex}}
     % {$\tan \alpha$} 
     % displaystyle color
     {$\displaystyle \tan \alpha \color{black}= 
-    \frac{{\color{red}\sin \alpha}}{\color{blue}\cos \alpha}$}
+    \frac{  {\color{red}\sin \alpha}  }{ \color{blue}\cos \alpha }$}
     (x); 
     
     \draw (0,0) -- (x);
