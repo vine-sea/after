@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz,geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+\usetikzlibrary{external}
+% \tikzexternalize
+\begin{document}
+\def\myc#1{
+\node (a) at (0:.2\textwidth){};
+        \foreach \x in {0,#1,...,360}{ 
+    
+        \node (a) at (\x:.2\textwidth){};
+        \draw (a) circle [radius=.2\textwidth];
+        }
+}
+
+\begin{center}
+
+    \foreach \y in {10,13,15,17,19}{
+        \tikz \myc{\y};
+    }
+
+\end{center}
+
+
+
+
+
+
+\end{document}

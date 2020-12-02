@@ -29,9 +29,12 @@
 + [`表`](#表)
 + [`栈`](#栈)
 
-
-
-[here](formula/my.pdf)
+![](done/eight-figure0.svg)
+![](done/eight-figure1.svg)
+![](done/eight-figure2.svg)
+![](done/eight-figure3.svg)
+![](done/eight-figure4.svg)
+ 
 # `otherInfo`
 ```
 printf wrong use gbk
@@ -53,7 +56,22 @@ $()!<dis>!:<ang>()$
 xfp
 lua
 ```
-code here section one
+almost start with
+```latex
+\documentclass{article}
+\usepackage{tikz,geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+
+```
+export
+```latex
+\usetikzlibrary{external}
+\tikzexternalize
+pdftex --shell-escape ten
+```
+
+## code here section one
 ```latex
 \documentclass{article}
 \usepackage{tikz}
@@ -300,6 +318,637 @@ The {\color{sincolor}sine of $\alpha$}, which is the height of the red line, is
 % \end{document}
 
 ```
+
+## code here section three
+```latex
+\documentclass{article} % say 
+\usepackage{tikz}
+ 
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usetikzlibrary {arrows.meta}
+
+
+\tikzset{
+place/.style={circle,draw=blue!50,fill=blue!20,thick, 
+    inner sep=0pt,minimum size=6mm},
+transition/.style={rectangle,draw=black!50,fill=black!20,thick,
+    inner sep=0pt,minimum size=4mm}}
+
+
+    
+\begin{document} 
+
+\begin{center}
+    \begin{tikzpicture}
+        % [inner sep=2mm,
+        % place/.style={circle,draw=blue!50,fill=blue!20,thick}, 
+        % transition/.style={rectangle,draw=black!50,fill=black!20,thick}] 
+  
+        % [place/.style={circle,draw=blue!50,fill=blue!20,thick, 
+        %     inner sep=0pt,minimum size=6mm},
+        % transition/.style={rectangle,draw=black!50,fill=black!20,thick,
+        %     inner sep=0pt,minimum size=4mm}]
+
+        [bend angle=45,
+        pre/.style={<-,shorten <=1pt,>={Stealth[round]},semithick},
+        post/.style={->,shorten >=1pt,>={Stealth[round]},semithick}]
+
+
+        % \draw (0,0) -- (1,1);
+        % \path 
+        % ( 0,2) node [shape=circle,draw] {} 
+        % ( 0,1) node [shape=circle,draw] {}
+        % ( 0,0) node [shape=circle,draw] {} 
+        % ( 1,1) node [shape=rectangle,draw] {}
+        % (-1,1) node [shape=rectangle,draw] {};
+
+
+  
+    % \node at ( 0,2) [place] {}; 
+    % \node at ( 0,1) [place] {}; 
+    % \node at ( 0,0) [place] {}; 
+    % \node at ( 1,1) [transition] {};
+    % \node at (-1,1) [transition] {};
+
+
+    % \node[place] (waiting 1) at ( 0,2) {};
+    % \node[place] (critical 1) at ( 0,1) {};
+    % \node[place] (semaphore) at ( 0,0) {};
+    % \node[transition] (leave critical) at ( 1,1) {};
+    % \node[transition] (enter critical) at (-1,1) {};
+
+
+
+    \node[place]    (waiting) {}; 
+    \node[place]    (critical)  [below=of waiting] {}; 
+    % \node[place]    (semaphore)  [below=of critical,label=above:$s\le3$] {};
+    \node[place]    (semaphore)  [below=of critical, label={[red]above:$s\le3$} ] {};
+  
+    % \node[transition] (leave critical) [right=of critical] {};
+    % \node[transition] (enter critical) [left=of critical] {};
+
+    % \draw [->] (enter critical) to (critical);
+    % \draw [->] (waiting) to [out=180,in=90] (enter critical);
+    % \draw [->] (enter critical) to [bend right=45] (semaphore);
+    
+    \node[transition] (leave critical) [right=of critical] {} 
+        edge [<-] (critical)
+        edge [->,bend right=45] (waiting)
+        edge [<-,bend left=45] (semaphore);
+    \node[transition] (enter critical) [left=of critical] {}
+        edge [->] (critical)
+        edge [<-,bend left=45] (waiting)
+        edge [->,bend right=45] (semaphore);
+
+    \end{tikzpicture}
+
+
+
+    \begin{tikzpicture} 
+        [bend angle=45, 
+        pre/.style={<-,shorten <=1pt,>={Stealth[round]},semithick},
+        post/.style={->,shorten >=1pt,>={Stealth[round]},semithick}]
+        \node[place] (waiting)       {};
+        \node[place,tokens=1]   (critical)   [below=of waiting] {}; 
+        \node[place]  (semaphore)  [below=of critical] {};
+
+
+        %s→t
+        \node[transition] (leave critical) [right=of critical] {} 
+            edge [pre] (critical)
+            edge [post,bend right] (waiting)
+            edge [pre, bend left] (semaphore);
+        \node[transition] (enter critical) [left=of critical] {} 
+            edge [post] (critical)
+            edge [pre, bend left] (waiting) 
+            edge [post,bend right] (semaphore);
+
+
+        \begin{scope}[on background layer]
+            \node [fill=black!30,
+                fit=(waiting) 
+                    (critical)
+                    (semaphore) 
+                    (leave critical)
+                    (enter critical)] {};
+        \end{scope}
+    \end{tikzpicture}
+
+
+
+%-------------------------------------------------
+
+
+
+
+    \tikz \node [circle,draw,
+        label=60:$60^\circ$,
+        label=below:$-90^\circ$] {my circle};
+
+    \begin{tikzpicture}[auto,bend right] 
+        \node (a) at (0:1) {$0^\circ$}; 
+        \node (b) at (120:1) {$120^\circ$}; 
+        \node (c) at (240:1) {$240^\circ$};
+        \draw 
+        (a) to node {1} node [swap] {1'} (b) 
+        % (b) to node {2} node [swap] {2'} (c) 
+        (b) to node {2} (c) 
+        (c) to node {3} node [swap] {3'} (a);
+    \end{tikzpicture}
+
+
+   \tikz \draw [->,decorate,
+    % decoration=snake
+    decoration={snake,
+    amplitude=.4mm,
+    segment length=2mm,
+    post length=1mm}
+    ] (0,0) -- (2,0)
+    node [above,text width=3cm,align=center,midway] {
+    replacement of the \textcolor{red}{capacity} by \textcolor{red}{two places}
+    }
+    ;
+
+
+
+
+
+
+\end{center}
+
+\end{document}
+```
+
+## code here section four
+```latex
+ 
+\documentclass{article}
+\usepackage{tikz,geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+
+
+\begin{document}
+\begin{center}
+    you \\
+\begin{tikzpicture}
+
+\def\A{\textcolor{input}{$A$}} 
+\def\B{\textcolor{input}{$B$}} 
+\def\C{\textcolor{output}{$C$}}
+\def\D{$D$}
+\def\E{$E$} 
+
+\colorlet{input}{blue!80!black}
+\colorlet{output}{red!70!black}
+\colorlet{triangle}{orange}
+
+
+    % \coordinate [label=left:
+    %     \textcolor{blue}{$A$}] (A) at (0,0); 
+    % \coordinate [label=right:
+    %     \textcolor{blue}{$B$}] (B) at (1.25,0.25);
+    
+
+    \coordinate [label=left:
+        \textcolor{blue}{$A$}] (A) at ($ (0,0) + .1*(rand,rand) $);
+    \coordinate [label=right:
+        \textcolor{blue}{$B$}] (B) at ($ (1.25,0.25) + .1*(rand,rand) $);
+   
+    \draw[blue] (A) -- (B); 
+
+
+
+    % \draw  let 
+    %     \p1 = ($ (B) - (A) $),
+    %     \n2 = {veclen(\x1,\y1)}
+    %      in
+    %      (A) circle (\n2)
+    %      (B) circle (\n2);
+
+
+    % \node [draw,circle through=(B),
+    %     label=left:$D$] at (A) {};
+
+    % \node [draw,circle through=(A),
+    %     label=right:$E$] at (B) {};
+
+    \draw [name path=A--B] (A) -- (B);
+    \node (D) [name path=D,draw,circle through=(B),label=left:$D$] at (A) {}; 
+    \node (E) [name path=E,draw,circle through=(A),label=right:$E$] at (B) {};
+    \path [name intersections={of=D and E, by={[label=above:$C$]C, [label=below:$C'$]C'}}]; 
+    \draw [name path=C--C',red] (C) -- (C');
+    \path [name intersections={of=A--B and C--C',by=F}];
+    \node [fill=red,inner sep=1pt,label=-45:$F$] at (F) {};
+
+
+    \foreach \point in {A,B,C}
+    \fill [black,opacity=.5] (\point) circle (2pt);
+
+    \begin{pgfonlayer}{background} 
+        \fill[triangle!80] (A) -- (C) -- (B) -- cycle;
+    \end{pgfonlayer}
+
+
+
+
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+    \def\A{\textcolor{orange}{$A$}}
+    \def\B{\textcolor{input}{$B$}}
+    \def\C{\textcolor{input}{$C$}}
+    \def\L{\textcolor{output}{$L$}}
+    \def\E{$E$}
+    \def\G{$G$}
+    \def\K{$K$}
+    \def\F{$F$} 
+    \def\H{$H$}
+
+    \colorlet{input}{blue!80!black}
+    \colorlet{output}{red!90!black}
+
+
+
+    \coordinate [label=left:$A$] (A) at (0,0);
+    \coordinate [label=right:$B$] (B) at (.75,0.25);
+    \coordinate [label=above:$C$] (C) at (1,1.5);
+    \draw [help lines,opacity=.5]  (A) -- (B);
+    \draw [input,thick] (B) -- (C);
+    % \node [fill=red,inner sep=1pt,label=below:$X$] (X) at 
+    % ($ (A)!.5!(B) $) {};
+
+    % \node [fill=red,inner sep=1pt,label=above:$D$] (D) at 
+    % ($ (X) ! {sin(60)*2} ! 90:(B) $) {}; %dis* & rotate
+
+    \node [fill=red,inner sep=1pt,label=above:$D$] (D) at
+     ($ (A) ! .5 ! (B) ! {sin(60)*2} ! 90:(B) $) {};
+    \draw[help lines,opacity=.5] (A) -- (D) -- (B);
+ 
+    \node (H) [name path=H,label=135:$H$,draw,circle through=(C)] at (B) {};
+    \draw [help lines,opacity=.5] (D) -- ($ (D) ! 3.5 ! (B) $)
+         coordinate [label=below:$F$] (F);
+    \draw[help lines,opacity=.5] (D) -- ($ (D) ! 3.5 ! (A) $) 
+        coordinate [label=below:$E$] (E);
+
+    \path [name path=B--F] (B) -- (F); 
+    \path [name intersections={of=H and B--F,by={[label=left:$G$]G}}];
+    \fill[red,opacity=.5] (G) circle (2pt);
+
+
+
+    \node (K) at (D)
+     [name path=K,help lines,circle through=(G),draw,label=135:\K] {};
+    \path [name path=A--E] (A) -- (E); 
+    \path [name intersections={of=K and A--E,by={[label=below:\L]L}}];
+    \draw [output,thick] (A) -- (L);
+
+    \foreach \point in {A,B,C,D,G,L}
+    \fill [black,opacity=.5] (\point) circle (2pt);
+
+\end{tikzpicture}
+
+\end{center}
+\end{document}
+```
+
+## code here section eight
+```latex
+\documentclass{article}
+\usepackage{tikz,geometry}
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1.5cm}
+\usetikzlibrary{
+calc,
+intersections,
+through,
+backgrounds,
+positioning,
+shapes.misc,
+graphs,
+arrows.meta,
+trees,
+mindmap,
+calendar,
+shadows
+}
+
+\begin{document}
+
+
+\begin{center}
+
+\begin{tikzpicture}
+    [
+    node distance=5mm and 5mm, 
+    text height=1.5ex,
+    text depth=.25ex,
+    nonterminal/.style={ % The shape: 
+        rectangle, 
+        % The size: 
+        minimum size=6mm,
+        % The border: 
+        very thick, 
+        draw=red!50!black!50,
+        % rounded corners=3mm,
+        % The filling:
+        top color=white,
+        bottom color=red!50!black!40,
+        font=\itshape},
+    terminal/.style={ % The shape: 
+        rectangle, 
+        % The size: 
+        minimum size=6mm,
+        % The border: 
+        very thick, 
+        draw=red!50!black!50,
+        rounded corners=3mm,
+        % The filling:
+        top color=white,
+        bottom color=red!50!black!40,
+        font=\itshape},
+    point/.style={
+        circle,
+        inner sep=0pt, 
+        minimum size=2pt
+        ,fill=red
+    },
+    skip loop/.style={to path={-- ++(0,#1) -| (\tikztotarget)}},
+    hv path/.style={to path={-| (\tikztotarget)}}, %herizantal first
+    vh path/.style={to path={|- (\tikztotarget)}}, %vertical first
+    >={Stealth[round]}, black!50,text=black, thick,
+        ]
+% \node (s) [nonterminal] {unsigned integer};
+
+% \node (dot) [terminal,right=of s] {.};
+% \node (digit) [terminal,right=of dot] {digit};
+% \node (E) [terminal,right=of digit] {E};
+% \node (plus) [terminal,above right=of E]  {+};
+% \node (minus) [terminal,below right=of E] {-};
+% \node (ui2) [nonterminal,below right=of plus]  {unsigned integer};
+
+\matrix[row sep=1mm,column sep=5mm] { 
+% First row: 
+& & & & & & & & & & &  \node(plus) [terminal] {+}; & \\
+% Second row: 
+\path node (p1) [point] {}; &\node(ui1) [nonterminal] {unsigned integer}; & 
+\path node (p2) [point] {}; &\node(dot) [terminal] {.};&
+\path node (p3) [point] {}; &\node(digit) [terminal] {digit};&
+\path node (p4) [point] {}; &\node (p5) [point] {}; &
+\path node (p6) [point] {}; &\node (e)[terminal] {E};&
+\path node (p7) [point] {}; & &
+\path node (p8) [point] {}; &\node (ui2)[nonterminal] {unsigned integer};& 
+\path node (p9) [point] {}; &\node (p10) [point] {};  \\
+% Third row: 
+& & & & & & & & & & & \node (minus)[terminal] {-}; & \\
+};
+
+
+% \draw [->] 
+%      ($ (digit.east) + (2mm,0) $)
+%     -- ++(0,-.5) 
+%     -| ($ (digit.west) - (2mm,0) $)
+%     ;
+
+% \draw [->] 
+%     (p2) 
+%     -- ++(0,-.5) 
+%     -| (p1) %two line
+%     ;
+
+% \path (p1) edge[->,skip loop=5mm] (p2);
+
+
+\graph[edges=rounded corners] { (p1) -> (ui1) -- (p2) -> (dot) -- (p3) -> (digit) -- (p4) -- (p5) -- 
+    (p6) -> (e) -- (p7) -- (p8) -> (ui2) -- (p9) -> (p10);
+    (p4) ->[skip loop=-5mm] (p3);
+    (p2) ->[skip loop=5mm] (p5);
+    (p6) ->[skip loop=-11mm] (p9); 
+    (p7) ->[vh path] (plus) -> [hv path] (p8);
+    (p7) ->[vh path] (minus) -> [hv path] (p8);
+
+};
+
+\end{tikzpicture}
+
+
+    
+ 
+ %-----------------------
+
+    \tikz [>={Stealth[round]}, black!50, text=black, thick,
+    every new ->/.style = {shorten >=1pt},
+    graphs/every graph/.style = {edges=rounded corners},
+    skip loop/.style = {to path={-- ++(0,#1) -| (\tikztotarget)}},
+    hv path/.style  = {to path={-| (\tikztotarget)}},
+    vh path/.style  = {to path={|- (\tikztotarget)}},
+    nonterminal/.style = {rectangle, minimum size=6mm, very thick, draw=red!50!black!50,
+        top color=white, bottom color=red!50!black!20, font=\itshape, text height=1.5ex,text depth=.25ex},
+    terminal/.style = {rounded rectangle, minimum size=6mm, very thick, draw=black!50, 
+        top color=white, bottom color=black!20, font=\ttfamily, text height=1.5ex, text depth=.25ex},
+    shape= coordinate
+        ] 
+    \graph [grow right sep, branch down=7mm, simple] 
+    { / -> unsigned integer[nonterminal] -- p1
+        -> "." [terminal] -- p2 -> digit[terminal] ->p3
+        -- p4 -- p5 -> E[terminal] -- q1  ->[vh path] {[nodes={yshift=7mm}] "+"[terminal], q2, "-"[terminal]
+        }  -> [hv path] q3 -- /unsigned integer [nonterminal] -- p6 -> /;
+
+        p1 ->[skip loop=5mm] p4; p3 ->[skip loop=-5mm] p2; p5 ->[skip loop=-11mm] p6;
+        q1 -- q2 -- q3; % make these edges plain
+    };
+
+ 
+%-----------------------
+
+\tikz [font=\footnotesize, grow=right, 
+level 1/.style={sibling distance=6em}, 
+level 2/.style={sibling distance=1em},
+level distance=5cm]
+\node {Computational Complexity} % root
+child {  node {Computational Problems} 
+    child { node {Problem Measures} } 
+    child { node {Problem Aspects} } 
+    child { node {Problem Domains} }
+    child { node {Key Problems} }
+}
+child { node {Computational Models}
+    child { node {Turing Machines} } 
+    child { node {Random-Access Machines} } 
+    child { node {Circuits} } 
+    child { node {Binary Decision Diagrams} }
+    child { node {Oracle Machines} } 
+    child { node {Programming in Logic} }
+}
+child { node {Measuring Complexity} 
+    child { node {Complexity Measures} } 
+    child { node {Classifying Complexity} } 
+    child { node {Comparing Complexity} } 
+    child { node {Describing Complexity} }
+}
+child { node {Solving Problems} 
+    child { node {Exact Algorithms} } 
+    child { node {Randomization} } 
+    child { node {Fixed-Parameter Algorithms} }
+    child { node {Parallel Computation} }
+    child { node {Partial Solutions} } 
+    child { node {Approximation} }
+};
+
+%----------------------------------------
+% \tikz [text width=2.7cm, align=flush center, grow cyclic,mindmap, 
+% every node/.style=concept, concept color=black!20,
+% level 1/.style={level distance=4.5cm,sibling angle=90},
+% level 2/.style={text width=3cm, font=\footnotesize, level distance=3cm,sibling angle=30}]
+\begin{tikzpicture}
+
+
+
+
+
+% \clip(-1,-2) rectangle ++ (4,8);
+\begin{scope}
+[mindmap, 
+scale=1,
+every node/.style={concept,circular drop shadow,execute at begin node=\hskip0pt}, 
+root concept/.append style={ concept color=black, fill=white, line width=1ex, text=black},
+text=white,
+grow cyclic,
+computational problems/.style={concept color=red,faded/.style={concept color=red!50}}, 
+computational models/.style={concept color=blue,faded/.style={concept color=blue!50}},
+measuring complexity/.style={concept color=orange,faded/.style={concept color=orange!50}},
+solving problems/.style={concept color=green!50!black,faded/.style={concept color=green!50!black!50}},
+level 1/.append style={level distance=4.5cm,sibling angle=90},
+level 2/.append style={level distance=3cm,sibling angle=45}]
+
+
+\node (Computational Complexity) [root concept] {Computational Complexity} % root
+child [concept color=red] {  node (Computational Problems) {Computational Problems} 
+    child { node {Problem Measures} } 
+    child { node {Problem Aspects} } 
+    child { node {Problem Domains} }
+    child { node {Key Problems} }
+}
+child [concept color=blue] { node (Computational Models) {Computational Models}
+    child { node {Turing Machines} } 
+    child { node {Random-Access Machines} } 
+    child { node {Circuits} } 
+    child { node {Binary Decision Diagrams} }
+    child { node {Oracle Machines} } 
+    child { node {Programming in Logic} }
+}
+child[concept color=orange]  { node {Measuring Complexity} 
+    child { node {Complexity Measures} } 
+    child { node {Classifying Complexity} } 
+    child { node {Comparing Complexity} } 
+    child { node {Describing Complexity} }
+}
+child[concept color=green!50!black]  { node {Solving Problems} 
+    child { node {Exact Algorithms} } 
+    child { node {Randomization} } 
+    child { node {Fixed-Parameter Algorithms} }
+    child { node {Parallel Computation} }
+    child { node {Partial Solutions} } 
+    child { node {Approximation} }
+}
+;
+
+
+\end{scope}
+
+%textwidth texthight
+\begin{scope}[every annotation/.style={fill=black!40}]
+\def\lecture#1#2#3#4#5#6{ 
+    \node [annotation, #3, scale=0.65, text width=4cm, inner sep=2mm] at (#4) 
+    { Lecture #1: \textcolor{orange}{\textbf{#2}} 
+    \list{--}{\topsep=2pt\itemsep=0pt\parsep=0pt \parskip=0pt
+                \labelwidth=8pt\leftmargin=8pt
+                \itemindent=0pt\labelsep=2pt}
+    % Circuits Machines Fixed-    
+    % Parameter Algorithms
+    % Randomization
+    % Describing Complexity
+    % Comparing Complexity
+    % Exact Algorithms 
+    #5 \endlist };
+    \node [anchor=base west] at (cal-#6.base east) 
+    {\textcolor{orange}{\textbf{#2}}};
+}
+
+% \calendar [xshift=-9cm,yshift=9cm,day list downward, name=cal, dates=2009-04-01 to 2009-06-24]
+%     if (weekend) [black!25]
+
+\tiny \calendar [
+        day list downward,
+        month text=\%mt\ \%y0, 
+        month yshift=3.5em,
+        name=cal,
+        at={(-.5\textwidth-5mm,.5\textheight-1cm)},
+        dates=2009-04-01 to 2009-06-last]
+    if (day of month=1) 
+    { \node at (0pt,1.5em) [anchor=base west] 
+      {\small\tikzmonthtext};}
+    ;%calender end
+
+
+\lecture{1}{Computational Problems}{above,xshift=-3mm} 
+{Computational Problems.north}
+{\item Knowledge of several key problems 
+\item Knowledge of problem encodings
+\item Being able to formalize problems }
+{2009-04-08}
+
+\lecture{2}{Computational Models}{above left}
+ {Computational Models.west}
+ { \item Knowledge of Turing machines 
+ \item Being able to compare the computational power of different models
+}{2009-04-15}
+
+    % \node [annotation, above] at (Computational Problems.north) 
+    % {Lecture 1: Computational Problems
+    % \begin{itemize}
+    %     \item Knowledge of several key problems
+    %      \item Knowledge of problem encodings 
+    %      \item Being able to formalize problems
+    % \end{itemize}};
+
+\end{scope}
+
+
+
+%all the most
+\begin{pgfonlayer}{background}
+    %  \clip (-1.5,-5) rectangle ++(4,10);
+    \clip[xshift=-1cm] (-.5\textwidth,-.5\textheight) 
+    rectangle ++(\textwidth,\textheight);
+
+
+    \colorlet{upperleft}{green!50!black!25} 
+    \colorlet{upperright}{orange!25} 
+    \colorlet{lowerleft}{red!25} 
+    \colorlet{lowerright}{blue!25}
+    % The large rectangles:
+     \fill [upperleft] (Computational Complexity) rectangle ++(-20,20);
+      \fill [upperright] (Computational Complexity) rectangle ++(20,20);
+       \fill [lowerleft] (Computational Complexity) rectangle ++(-20,-20); 
+       \fill [lowerright] (Computational Complexity) rectangle ++(20,-20);
+    % The shadings: 
+    \shade [left color=upperleft,right color=upperright] ([xshift=-1cm]Computational Complexity) rectangle ++(2,20);
+    \shade [left color=lowerleft,right color=lowerright] ([xshift=-1cm]Computational Complexity) rectangle ++(2,-20);
+    \shade [top color=upperleft,bottom color=lowerleft] ([yshift=-1cm]Computational Complexity) rectangle ++(-20,2);
+    \shade [top color=upperright,bottom color=lowerright] ([yshift=-1cm]Computational Complexity) rectangle ++(20,2);
+\end{pgfonlayer}
+ 
+\end{tikzpicture}
+
+\end{center}
+
+\end{document}
+```
+
+
+
+
 # `magic tool` ![](file/齿轮.png)
 ```
 gm convert 齿轮.png -resize 32X32 齿轮.png
