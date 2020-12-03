@@ -3,7 +3,7 @@
 \geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
 \usetikzlibrary{calc,intersections,through,backgrounds}
 \usetikzlibrary{external}
-% \tikzexternalize
+\tikzexternalize
 \begin{document}
 \def\myc#1{
 \node (a) at (0:.2\textwidth){};
@@ -16,10 +16,14 @@
 
 \begin{center}
 
-    \foreach \y in {10,13,15,17,19}{
-        \tikz \myc{\y};
-    }
+    % \foreach \y in {10,13,15,17,19}{
+    %     \tikz \myc{\y};
+    % }
 
+    \tikz \node at (0,0) {$\sum$};\\
+    \tikz \node at (0,0) {$\sum$};\\
+    \tikz \node at (0,0) {$\sum$};\\
+    \tikz \node at (0,0) {$\sum$};
 \end{center}
 
 

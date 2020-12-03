@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=latex 2020.11.30)  2 DEC 2020 21:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.30)  4 DEC 2020 00:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -61,10 +61,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(c:/texlive/2020/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen137
 \Gin@req@width=\dimen138
@@ -103,20 +103,18 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
  (c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
-Driver file for pgf: pgfsys-dvips.def
+Driver file for pgf: pgfsys-pdftex.def
 
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.def
-File: pgfsys-dvips.def 2020/01/08 v3.1.5b (3.1.5b)
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
 
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-postscrip
-t.def
-File: pgfsys-common-postscript.def 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@objectcount=\count180
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count181
-\pgfsyssoftpath@bigbuffer@items=\count182
+\pgfsyssoftpath@smallbuffer@items=\count180
+\pgfsyssoftpath@bigbuffer@items=\count181
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -126,8 +124,9 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -144,7 +143,7 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen149
-\pgfmath@count=\count183
+\pgfmath@count=\count182
 \pgfmath@box=\box46
 \pgfmath@toks=\toks23
 \pgfmath@stack@operand=\toks24
@@ -168,7 +167,7 @@ x)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
 etics.code.tex)))
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count184
+\c@pgfmathroundto@lastzeros=\count183
 ))
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -205,7 +204,7 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box47
 \pgf@hbox=\box48
 \pgf@layerbox@main=\box49
-\pgf@picture@serial@count=\count185
+\pgf@picture@serial@count=\count184
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
@@ -236,8 +235,8 @@ File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen173
-\pgf@sys@shading@range@num=\count186
-\pgf@shadingcount=\count187
+\pgf@sys@shading@range@num=\count185
+\pgf@shadingcount=\count186
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -294,7 +293,7 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count188
+\pgf@plot@mark@count=\count187
 \pgfplotmarksize=\dimen178
 )
 \tikz@lastx=\dimen179
@@ -309,18 +308,18 @@ File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \tikz@figbox@bg=\box53
 \tikz@tempbox=\box54
 \tikz@tempbox@bg=\box55
-\tikztreelevel=\count189
-\tikznumberofchildren=\count190
-\tikznumberofcurrentchild=\count191
-\tikz@fig@count=\count192
+\tikztreelevel=\count188
+\tikznumberofchildren=\count189
+\tikznumberofcurrentchild=\count190
+\tikz@fig@count=\count191
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count193
-\pgfmatrixcurrentcolumn=\count194
-\pgf@matrix@numberofcolumns=\count195
+\pgfmatrixcurrentrow=\count192
+\pgfmatrixcurrentcolumn=\count193
+\pgf@matrix@numberofcolumns=\count194
 )
-\tikz@expandcount=\count196
+\tikz@expandcount=\count195
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
@@ -335,9 +334,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (c:/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count197
-\Gm@cntv=\count198
-\c@Gm@tempcnt=\count199
+\Gm@cnth=\count196
+\Gm@cntv=\count197
+\c@Gm@tempcnt=\count198
 \Gm@bindingoffset=\dimen187
 \Gm@wd@mp=\dimen188
 \Gm@odd@mp=\dimen189
@@ -357,7 +356,7 @@ braryintersections.code.tex
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.c
 ode.tex
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-\pgf@intersect@solutions=\count266
+\pgf@intersect@solutions=\count199
 ))
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarythrough.code.tex
@@ -381,7 +380,7 @@ Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
 (c:/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
@@ -389,15 +388,13 @@ Package atveryend Info: \enddocument detected (standard20110627).
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzex
 ternalshared.code.tex))
-(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
-File: l3backend-dvips.def 2020-03-12 L3 backend support: dvips
+\openout3 = `eight.auxlock'.
+
+
+(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count266
 \l__pdf_internal_box=\box58
-\g__pdf_backend_object_int=\count267
-\l__pdf_backend_content_box=\box59
-\l__pdf_backend_model_box=\box60
-\g__pdf_backend_annotation_int=\count268
-\g__pdf_backend_link_int=\count269
-\g__pdf_backend_link_sf_int=\count270
 )
 No file eight.aux.
 \openout1 = `eight.aux'.
@@ -417,10 +414,32 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 ABD: EveryShipout initializing macros
+(c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count267
+\scratchdimen=\dimen195
+\scratchbox=\box59
+\nofMPsegments=\count268
+\nofMParguments=\count269
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count270
+\MPscratchDim=\dimen196
+\MPnumerator=\count271
+\makeMPintoPDFobject=\count272
+\everyMPtoPDFconversion=\toks30
+) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -451,28 +470,80 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+\openout3 = `eight-figure0.md5'.
+
+\openout3 = `eight.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
+n-error -interaction=batchmode -jobname "eight-figure0" "\def\tikzexternalrealj
+ob{eight}\input{eight}"' ========
+runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
+ "eight-figure0" "\def\tikzexternalrealjob{eight}\input{eight}")...executed.
+
+\openout3 = `eight.auxlock'.
+
+\openout3 = `eight-figure1.md5'.
+
+\openout3 = `eight.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
+n-error -interaction=batchmode -jobname "eight-figure1" "\def\tikzexternalrealj
+ob{eight}\input{eight}"' ========
+runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
+ "eight-figure1" "\def\tikzexternalrealjob{eight}\input{eight}")...executed.
+
+\openout3 = `eight.auxlock'.
+
+\openout3 = `eight-figure2.md5'.
+
+\openout3 = `eight.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
+n-error -interaction=batchmode -jobname "eight-figure2" "\def\tikzexternalrealj
+ob{eight}\input{eight}"' ========
+runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
+ "eight-figure2" "\def\tikzexternalrealjob{eight}\input{eight}")...executed.
+
+\openout3 = `eight.auxlock'.
+
+\openout3 = `eight-figure3.md5'.
+
+\openout3 = `eight.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
+n-error -interaction=batchmode -jobname "eight-figure3" "\def\tikzexternalrealj
+ob{eight}\input{eight}"' ========
+runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
+ "eight-figure3" "\def\tikzexternalrealjob{eight}\input{eight}")...executed.
+
+\openout3 = `eight.auxlock'.
+
 [1
 
-] [2] [3] [4] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 30.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 30.
- (./eight.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 30.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 30.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 30.
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./eight-figure0
+.pdf> <./eight-figure1.pdf> <./eight-figure2.pdf> <./eight-figure3.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
+
+(./eight.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 34.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 12946 strings out of 480609
- 272390 string characters out of 5907561
- 595277 words of memory out of 5000000
- 28634 multiletter control sequences out of 15000+600000
+ 13208 strings out of 480608
+ 275466 string characters out of 5907535
+ 494334 words of memory out of 5000000
+ 28875 multiletter control sequences out of 15000+600000
  532338 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,5n,68p,538b,690s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,5n,68p,538b,152s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on eight.pdf (1 page, 17933 bytes).
+PDF statistics:
+ 38 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on eight.dvi (5 pages, 88756 bytes).

@@ -30,10 +30,12 @@
 + [`栈`](#栈)
 
 ![](done/eight-figure0.svg)
+
 ![](done/eight-figure1.svg)
+
 ![](done/eight-figure2.svg)
+
 ![](done/eight-figure3.svg)
-![](done/eight-figure4.svg)
  
 # `otherInfo`
 ```

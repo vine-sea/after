@@ -2,9 +2,15 @@ sour=search
 cpp=${sour}.cpp
 exe=${sour}.exe
 
+
+
 s=ten
 t=eight
-num=4
+num=3
+
+d2sp=p2s\dist-32bits\pdf2svg.exe
+sp=C:\Users\26280\Desktop\after\formula\${t}.pdf
+tp=C:\Users\26280\Desktop\after\formula\${t}.svg
 
 all:
 	gcc ${cpp} -o ${exe}
@@ -26,5 +32,9 @@ cut:
 	cut ${t} formula
 
 
-one:latex
+mg:
+	${d2sp} ${sp} ${tp}
+	 
+
+
 	
