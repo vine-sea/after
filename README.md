@@ -31,9 +31,12 @@
 
 ![](done/eight-figure0.svg)
 
+
 ![](done/eight-figure1.svg)
 
+
 ![](done/eight-figure2.svg)
+
 
 ![](done/eight-figure3.svg)
  
@@ -46,17 +49,26 @@ printf wrong use gbk
 ```
 Miktex
 per.exe
+latexlive
+    pdflatex
+    latex
+    dvisvgm
+    dvipdfm
+
 tikz
 cartexart
-newcomand
+newcomand/let
+
 54 before 43 after 10 used
 unzip at 14:04（not do）
 load iso→1408 1544（done）
+
 $()!<dis>!:<ang>()$
-\xint
-\pgfmath
-xfp
+        \xint
+        \pgfmath
+        xfp
 lua
+
 ```
 almost start with
 ```latex
@@ -953,6 +965,7 @@ child[concept color=green!50!black]  { node {Solving Problems}
 
 # `magic tool` ![](file/齿轮.png)
 ```
+ghostscript 9.27 (64bits,cant to svg)
 gm convert 齿轮.png -resize 32X32 齿轮.png
 ```
 # `makefile` 

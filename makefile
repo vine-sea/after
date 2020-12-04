@@ -8,7 +8,7 @@ s=ten
 t=eight
 num=3
 
-d2sp=p2s\dist-32bits\pdf2svg.exe
+d2sp=p2s\dist-64bits\pdf2svg.exe
 sp=C:\Users\26280\Desktop\after\formula\${t}.pdf
 tp=C:\Users\26280\Desktop\after\formula\${t}.svg
 
