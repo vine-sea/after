@@ -2,15 +2,17 @@ sour=search
 cpp=${sour}.cpp
 exe=${sour}.exe
 
+lop =$(abspath $(lastword $(MAKEFILE_LIST)))
+lop2 =$(patsubst %/,%,$(dir $(lop))) 
 
 
-s=ten
+
+d2se=${strip ${lop2}}/p2s/dist-64bits/pdf2svg.exe
+
 t=formula
 num=10
 
-d2sp=p2s\dist-64bits\pdf2svg.exe
-sp=C:\Users\26280\Desktop\after\formula\${t}.pdf
-tp=C:\Users\26280\Desktop\after\formula\${t}.svg
+
 
 all:
 	@echo bloby
@@ -23,20 +25,21 @@ ex:
 
 
 
-pdfs:
-	cd formula&pdflatex --shell-escape ${t}
-latex:
-	cd formula&latex --shell-escape ${t}	
-d2s:
-	d2s ${t} formula ${num}
+lp:
+	$(info lop=$(lop)) 
+	$(info lop2=$(lop2)) 
+	$(info d2se=$(d2se))
 
-cut:
+svg:
+	cd formula&pdflatex --shell-escape ${t}
+	d2s ${t} formula ${num} ${d2se}
 	cut ${t} formula
 
+latex:
+	cd formula&latex --shell-escape ${t}	
 
-mg:
-	${d2sp} ${sp} ${tp}
 	 
-
+cut:
+	cut ${t} formula
 
 	

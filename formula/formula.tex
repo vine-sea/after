@@ -9,7 +9,11 @@
 
 \def\myc#1{
 \begin{center}
-    \Huge 
+    % \large
+    \Large
+    % \LARGE
+    % \huge 
+    % \Huge
     \tikz \node (0,0) {#1};
 \end{center}
 }
@@ -75,7 +79,37 @@
 \section{sort}
 \section{link}
 \section{tree}
-\section{picture}
+\subsection{结构}
+\subsection{性质}
+    \myc{$2^{i-1}$}
+    \myc{$2^i-1$}
+    \myc{$n_0=n_2+1$}
+    \myc{$\left\lfloor \log(2n) \right\rfloor+1$}
+    \myc{$lc=2i,rc=2i+1$}
+\subsection{存储}
+\subsection{遍历}
+\subsection{赫夫曼}
+\subsection{计数}
+    \myc{$\frac{1}{n+1}C_{2n}^n$}
+
+\section{graph}
+\subsection{结构}
+\subsection{存储}
+\subsection{遍历}
+\subsection{最小生成树(Prim,Krus)}
+\subsection{拓扑}
+\subsection{最短路径(Dij,Fro)}
+Dij\\
+    初始化D[i],$S=\phi$\\
+    选择$v_j$,$S=S\bigcup \{j\}$\\
+    修改D[i]
+
+Fro\\
+    初始$(v_i,v_j)$\\
+    试探$(v_i,v_0,v_j)$\\
+    再试探$(v_i,v_0,v_1,v_j)$
+
+    
 \section{math}
 \myc{$(vu)^{n}=\sum\limits_{k=0}^nc_n^kv^ku^{n-k}$}
 \myc{$\sin(a)\cos(b)=\frac{1}{2}(\sin(a+b)+\sin(a-b))$}

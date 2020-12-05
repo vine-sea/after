@@ -3,7 +3,8 @@
 
 @echo off
     set j=%cd%
-    set pa=C:\Users\26280\Desktop\after\p2s\dist-64bits\pdf2svg.exe
+    @REM set pa=%cd%\p2s\dist-64bits\pdf2svg.exe
+    set pa=%4
     @REM echo %j%
 	cd %2
     dir 
