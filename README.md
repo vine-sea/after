@@ -1,9 +1,10 @@
 + [`otherInfo`](#otherinfo)
 + [`markdown`](#markdown)
 + [`Latex`](#latex)
++ [`latexcode`skip](#latexcodeskip)
 + [`magic tool` !](#magic-tool-)
 + [`makefile`](#makefile)
-+ [`排序`](#排序)
++ [`排序`backcode](#排序backcode)
 + [插入](#插入)
 + [交换](#交换)
 + [选择](#选择)
@@ -29,7 +30,6 @@
 + [`表`](#表)
 + [`栈`](#栈)
 
-<!-- $\sum$ -->
 
 ![](done/formula-figure0.svg)
 
@@ -43,33 +43,38 @@
 ```
 printf wrong use gbk
 ```
-# `markdown`   
+# `markdown`
+```html
+<details>
+</details>
+```   
 
 # `Latex`
 ```
-Miktex
-per.exe
-latexlive
-    pdflatex
-    latex
-    dvisvgm
-    dvipdfm
+    Miktex
+    per.exe
+    latexlive
+        pdflatex
+        latex
+        dvisvgm
+        dvipdfm
 
-tikz
-cartexart
-newcomand/def
+    tikz
+    cartexart
+    newcomand/def
 
-54 before 43 after 10 used
-unzip at 14:04（not do）
-load iso→1408 1544（done）
+    54 before 43 after 10 used
+    unzip at 14:04（not do）
+    load iso→1408 1544（done）
 
-$()!<dis>!:<ang>()$
-        \xint
-        \pgfmath
-        xfp
-lua
+    $()!<dis>!:<ang>()$
+            \xint
+            \pgfmath
+            xfp
+    lua
 
 ```
+
 almost start with
 ```latex
 \documentclass{article}
@@ -95,9 +100,10 @@ offen def these
 }
 ```
 
-<details>
-<summary>sections</summary>
+</details>
 
+
+# [`latexcode`skip](#排序backcode)
 ## code here section one
 ```latex
 \documentclass{article}
@@ -974,7 +980,10 @@ child[concept color=green!50!black]  { node {Solving Problems}
 ```
 
 
-</details>
+
+
+</detials>
+
 
 
 
@@ -984,13 +993,22 @@ ghostscript 9.27 (64bits,cant to svg)
 gm convert 齿轮.png -resize 32X32 齿轮.png
 ```
 # `makefile` 
+
+about path
+```makefile
+lop =$(abspath $(lastword $(MAKEFILE_LIST)))
+lop2 =$(patsubst %/,%,$(dir $(lop))) 
+d2se=${strip ${lop2}}/p2s/dist-64bits/pdf2svg.exe
+
+```
+about work
 ```makefile
 all:
     gcc *.cpp -o *.exe
 test:
     @echo i am test
 ```
-# `排序`
+# [`排序`backcode](#latexcodeskip)
 # 插入  
 ## 直接
 ```c++

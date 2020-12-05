@@ -4,9 +4,6 @@ exe=${sour}.exe
 
 lop =$(abspath $(lastword $(MAKEFILE_LIST)))
 lop2 =$(patsubst %/,%,$(dir $(lop))) 
-
-
-
 d2se=${strip ${lop2}}/p2s/dist-64bits/pdf2svg.exe
 
 t=formula
