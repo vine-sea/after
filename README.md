@@ -42,6 +42,7 @@
 printf wrong use gbk
 ```
 # `markdown`   
+
 # `Latex`
 ```
 Miktex
@@ -91,6 +92,9 @@ offen def these
 \end{center}
 }
 ```
+
+<details>
+<summary>sections</summary>
 
 ## code here section one
 ```latex
@@ -967,6 +971,8 @@ child[concept color=green!50!black]  { node {Solving Problems}
 \end{document}
 ```
 
+
+</details>
 
 
 
