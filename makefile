@@ -5,14 +5,16 @@ exe=${sour}.exe
 
 
 s=ten
-t=eight
-num=3
+t=formula
+num=10
 
 d2sp=p2s\dist-64bits\pdf2svg.exe
 sp=C:\Users\26280\Desktop\after\formula\${t}.pdf
 tp=C:\Users\26280\Desktop\after\formula\${t}.svg
 
 all:
+	@echo bloby
+all2:
 	gcc ${cpp} -o ${exe}
 test:
 	@echo i am test

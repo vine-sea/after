@@ -29,16 +29,13 @@
 + [`表`](#表)
 + [`栈`](#栈)
 
-![](done/eight-figure0.svg)
+![](done/formula-figure0.svg)
+
+![](done/formula-figure1.svg)
+
+![](done/formula-figure2.svg)
 
 
-![](done/eight-figure1.svg)
-
-
-![](done/eight-figure2.svg)
-
-
-![](done/eight-figure3.svg)
  
 # `otherInfo`
 ```
@@ -57,7 +54,7 @@ latexlive
 
 tikz
 cartexart
-newcomand/let
+newcomand/def
 
 54 before 43 after 10 used
 unzip at 14:04（not do）
@@ -83,6 +80,16 @@ export
 \usetikzlibrary{external}
 \tikzexternalize
 pdftex --shell-escape ten
+```
+
+offen def these
+```latex
+\def\myc#1{
+\begin{center}
+    \Huge 
+    \tikz \node (0,0) {#1};
+\end{center}
+}
 ```
 
 ## code here section one
