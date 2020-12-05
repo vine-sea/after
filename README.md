@@ -29,6 +29,8 @@
 + [`表`](#表)
 + [`栈`](#栈)
 
+$\sum$
+
 ![](done/formula-figure0.svg)
 
 ![](done/formula-figure1.svg)
