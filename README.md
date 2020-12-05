@@ -38,8 +38,12 @@ printf wrong use gbk
 ```
 # `markdown`
 ```html
+
+
 <details>
 </details>
+
+
 ```   
 
 # `Latex`
@@ -94,6 +98,7 @@ offen def these
 ```
 
 <details>
+            
 
 
 # [`latexcode`skip](#排序backcode)
@@ -973,10 +978,12 @@ child[concept color=green!50!black]  { node {Solving Problems}
 ```
 
 
+     
 
 
-</detials>
+</details>
 
+     
 
 
 
