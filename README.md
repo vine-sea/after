@@ -31,13 +31,6 @@
 + [`栈`](#栈)
 
 
-![](done/formula-figure0.svg)
-
-![](done/formula-figure1.svg)
-
-![](done/formula-figure2.svg)
-
-
  
 # `otherInfo`
 ```
@@ -988,7 +981,7 @@ child[concept color=green!50!black]  { node {Solving Problems}
 
 
 # `magic tool` ![](file/齿轮.png)
-```
+```bat
 ghostscript 9.27 (64bits,cant to svg)
 gm convert 齿轮.png -resize 32X32 齿轮.png
 ```
@@ -1330,6 +1323,17 @@ k→f(K)
 顺序
 链式（二叉→线索，三叉）
 ## 性质
+![](done/formula-figure0.svg)
+
+![](done/formula-figure1.svg)
+
+![](done/formula-figure2.svg)
+
+![](done/formula-figure3.svg)
+
+![](done/formula-figure4.svg)
+
+
 ## 遍历&线索
 # 树&森林
 ## 结构
