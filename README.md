@@ -93,7 +93,7 @@ offen def these
 }
 ```
 
-</details>
+<details>
 
 
 # [`latexcode`skip](#排序backcode)
