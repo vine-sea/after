@@ -29,7 +29,7 @@
 + [`表`](#表)
 + [`栈`](#栈)
 
-$\sum$
+<!-- $\sum$ -->
 
 ![](done/formula-figure0.svg)
 
