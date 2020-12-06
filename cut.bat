@@ -1,16 +1,26 @@
-@echo off
+
+@echo off& setlocal EnableDelayedExpansion
     set j=%cd%
+    
     @REM echo %j%
-	cd %2
+	cd %1
     dir 
    
-    IF EXIST %1.tex (
-    ren %1.tex m%1.tex
-    ) 
+     set /a flag=1
 
-    FOR %%i IN (%CD%\%1*) DO (del %%i)
+     FOR  %%i IN (%cd%/*) DO (
 
-    IF EXIST m%1.tex (
-    ren m%1.tex %1.tex
-    ) 
+        @REM echo  %%~xi
+
+        set /a flag=0
+        @REM IF  %%~xi == .pdf     set /a flag=1
+        IF  %%~xi == .tex     set /a flag=1
+        IF  %%~xi == .png     set /a flag=1
+        @REM IF !flag! == 1  echo dont delete me
+        IF not !flag! == 1 del %%~nxi
+
+
+     )
+
+
     cd %j%

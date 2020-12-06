@@ -3,6 +3,7 @@
 \usepackage{tikz,geometry,amsmath}
 \usetikzlibrary{external}
 \tikzexternalize
+
 \geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
 \title{data srtuctre}
 \author{vine}
@@ -14,7 +15,22 @@
     % \LARGE
     % \huge 
     % \Huge
+    \tikzset{external/export=false}
+    \tikzsetfigurename{subset}
     \tikz \node (0,0) {#1};
+\end{center}
+}
+
+\def\hyc#1#2{
+\begin{center}
+    % \large
+    \Large
+    % \LARGE
+    % \huge 
+    % \Huge
+    \tikzset{external/export=true}
+    \tikzsetfigurename{#2}
+    \tikz \node (0,0) {$#1$};
 \end{center}
 }
 
@@ -76,6 +92,7 @@
 % % \normalsize
 % 国王、王后为王子选中了新娘，她是邻国的公主。王子乘船去接她，发现公主正是救他的姑娘。王子就要与心爱的姑娘结婚了，小人鱼不顾剧烈的疼痛，为他们跳起舞来，这将是她与王子在一起的最后一天了。夜降临了，可怜的小人鱼独自站在船舷，想起了海里的亲人和家乡。忽然，姐姐们出现了，原来，她们为了救妹妹，去求海巫婆，海巫婆要去了她们的头发，给了她们一把尖刀，让小人鱼刺中王子的胸口中，这是最后的机会了。她看见王子在睡梦中还叫着新娘的名字，他心中只有她的存在。小人鱼又吻了王子的额头一下，用颤抖的手把刀子扔到海里，自己也跳到大海里去了。天亮了，人们找不到小人鱼，船边的海浪上跳动着一片白色的泡沫。
 \section{search}
+    % \hyc{\sum}{vine}
 \section{sort}
 \section{link}
 \section{tree}
@@ -113,4 +130,24 @@ Fro\\
 \section{math}
 \myc{$(vu)^{n}=\sum\limits_{k=0}^nc_n^kv^ku^{n-k}$}
 \myc{$\sin(a)\cos(b)=\frac{1}{2}(\sin(a+b)+\sin(a-b))$}
+\myc{$\tan x=\sum_{n=1}^{\infty}\frac{B_{2n}(-4)^n(1-4^n)}{(2n)!}x^{2n-1} $}
+\myc{$\sec x=\sum_{n=0}^{\infty}\frac{E_{2n}(-1)^n}{(2n)!}x^{2n}$}
+\myc{$\arcsin x=\sum_{n=0}^{\infty}\frac{(2n)!}{(n!)^24^n(2n+1)}x^{2n+1}$}
+\myc{$\arctan x=\sum_{n=0}^{\infty}\frac{(-1)!}{2n+1}x^{2n+1}$}
+$B_k$伯努利数,1 1/2 1/6 1/30 1/42 1/30 1/66\\
+$E_k$欧拉数,1 -1 5 -61\\
+% cube here whith 2*n
+二项系数
+\myc{$\binom{\alpha }{n} =\prod_{k=1}^{n} \frac{\alpha-k+1}{k}
+=\frac{\alpha (\alpha -1)...(\alpha-n+1)}{k!}\quad(\alpha >n)$}
+% $\Gamma $函数\\
+$\Gamma $函数
+\myc{$\Gamma(n)=(n-1)!$}
+\myc{$\Gamma(z)=\int_0^{\infty}t^{z-1}\mathrm{e^{-t}} \rm{dt}$}
+$\Gamma $积分
+\myc{$1=\int_0^{\infty}\frac{x^{\alpha-1}{\lambda}^{\alpha}\mathrm{e^{\lambda x}}}{\Gamma(\alpha)}\rm{dx}$}
+误差函数
+
+\myc{$\frac{\rm{d}}{\rm{dz}}erf(z)=\frac{2}{\sqrt{\pi}}\mathrm{e^{-z^2}}$}
+
 \end{document}

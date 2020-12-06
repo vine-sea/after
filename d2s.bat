@@ -1,26 +1,17 @@
-
-
-
 @echo off
     set j=%cd%
-    @REM set pa=%cd%\p2s\dist-64bits\pdf2svg.exe
-    set pa=%4
-    @REM echo %j%
-	cd %2
+    set pa=%3
+	cd %1
     dir 
 
-
-    FOR /L %%i IN (0,1,%3) DO (
-
-          %pa% %1-figure%%i.pdf %1-figure%%i.svg
-        @REM  dvisvgm %1-figure%%i
-    )
-   
-    FOR /L %%i IN (0,1,%3) DO (
-        
-        move %1-figure%%i.svg  ../done/
+    FOR  %%i IN (%cd%/*.pdf) DO (
+    %pa%  %%~ni.pdf %%~ni.svg 
+    @REM echo %%~ni.pdf %%~ni.svg 
+    @REM  dvisvgm %1-figure%%i
     )
 
-
+    FOR  %%i IN (%cd%/*.svg) DO (
+    move %%~ni.svg  ../%2/
+    )
 
     cd %j%
